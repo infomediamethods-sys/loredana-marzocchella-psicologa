@@ -9,6 +9,7 @@
   --accent: #DC856C;
   --accent-texto: #9E4A33;
   --border: rgba(23, 42, 85, 0.25);
+  --raio-botao: 0; /* um raio só para todos os botões, inclusive o fixo (specs/design.md §6) */
   --texto: var(--brand);
   --focus-ring: var(--brand);
 
@@ -28,8 +29,9 @@
 .fundo-escuro { --focus-ring: var(--surface-1); }
 
 /* Base */
+main { background: var(--surface-1); }
 body {
-  background: var(--surface-1);
+  background: var(--brand); /* o padding-bottom do base.css (espaço do botão fixo) continua o rodapé */
   color: var(--texto);
   font-family: var(--fonte-texto);
   font-size: var(--fs-corpo);
@@ -67,7 +69,7 @@ p { text-wrap: pretty; }
   display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
   min-height: 48px; padding: var(--space-4) var(--space-6);
   background: var(--brand); color: var(--surface-1);
-  border: 1px solid var(--brand); border-radius: 0;
+  border: 1px solid var(--brand); border-radius: var(--raio-botao);
   font-family: var(--fonte-texto); font-size: 1rem; font-weight: 500; line-height: 1.25;
   text-decoration: none; text-align: center;
   transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
@@ -170,6 +172,7 @@ p { text-wrap: pretty; }
 /* Sobre */
 .sobre__grade { display: grid; }
 .sobre__retrato { width: 100%; }
+.sobre__retrato img { object-position: 45% 30%; }
 .sobre__card {
   position: relative; z-index: 1;
   margin: calc(-1 * var(--space-7)) var(--space-4) 0;
@@ -187,7 +190,10 @@ p { text-wrap: pretty; }
     margin: var(--space-8) 0 0;
     padding: var(--space-8);
   }
-  .sobre__retrato .foto-pendente { padding-inline-end: 25%; }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .sobre__retrato { grid-column: 1 / span 6; }
+  .sobre__card { grid-column: 6 / span 7; padding: var(--space-7); }
 }
 @media (min-width: 600px) and (max-width: 899px) {
   .sobre__card { max-width: calc(560px - 2 * var(--space-4)); margin-inline: auto; }
@@ -223,7 +229,7 @@ p { text-wrap: pretty; }
 .card__corpo h3 { margin-top: var(--space-2); }
 .card__corpo p:last-child { margin-top: var(--space-2); font-size: var(--fs-pequeno); }
 .publico__acao { margin-top: var(--space-7); text-align: center; }
-@media (max-width: 599px) { .publico__acao .botao { width: 100%; padding-inline: var(--space-5); } }
+@media (max-width: 599px) { .publico__acao .botao { width: 100%; } }
 @media (min-width: 900px) {
   .publico__cards { grid-template-columns: repeat(3, 1fr); margin-top: var(--space-7); }
   .card__corpo { padding: var(--space-6); }
@@ -260,15 +266,16 @@ p { text-wrap: pretty; }
 .contato .lead { margin-top: var(--space-4); }
 .contato .botao { margin-top: var(--space-6); }
 .contato__lista {
-  display: grid; gap: var(--space-2); justify-items: start; width: fit-content;
+  display: grid; gap: var(--space-2); justify-items: center; width: fit-content;
   margin: var(--space-7) auto var(--space-4); padding: 0; list-style: none;
 }
-.contato__lista li { display: flex; align-items: center; gap: var(--space-2); text-align: left; min-height: var(--toque-min); }
-.contato__lista a { display: inline-flex; align-items: center; min-height: var(--toque-min); }
+.contato__lista li { display: block; text-align: center; }
+.contato__lista li .icone { display: inline-block; vertical-align: -0.2em; margin-inline-end: var(--space-2); }
+.contato__lista a { display: inline-block; padding-block: var(--space-3); }
 @media (max-width: 599px) { .contato .botao { width: 100%; } }
 
 /* Rodapé */
-.rodape { background: var(--brand); color: var(--surface-1); padding-block: var(--space-8) var(--space-9); }
+.rodape { background: var(--brand); color: var(--surface-1); padding-block: var(--space-8); }
 .rodape__grade { display: grid; gap: var(--space-7); }
 .rodape__marca { font-size: 1.75rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.1; margin-bottom: var(--space-3); }
 .rodape__titulo { font-size: 1.625rem; margin-bottom: var(--space-3); }
@@ -280,7 +287,6 @@ p { text-wrap: pretty; }
   font-size: var(--fs-pequeno);
 }
 @media (min-width: 900px) {
-  .rodape { padding-block: var(--space-8); }
   .rodape__grade { grid-template-columns: 2fr 1fr 1.4fr; }
   .rodape__final { display: flex; justify-content: space-between; align-items: center; }
 }
@@ -289,7 +295,9 @@ p { text-wrap: pretty; }
 .whatsapp-fixo .icone, .link .icone { width: var(--icone-linha); height: var(--icone-linha); }
 .whatsapp-fixo {
   background: var(--brand); color: var(--surface-1);
-  font-weight: 500; font-size: 1rem; border: 1px solid var(--surface-1);
+  min-height: 48px; padding: var(--space-4) var(--space-6);
+  font-family: var(--fonte-texto); font-size: 1rem; font-weight: 500; line-height: 1.25;
+  border: 1px solid var(--surface-1); border-radius: var(--raio-botao);
 }
 
 /* Páginas internas (privacidade, 404) */
@@ -301,3 +309,8 @@ p { text-wrap: pretty; }
 .pagina__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-5); margin-top: var(--space-6); }
 .pagina__acoes .botao { margin-top: 0; }
 .pagina__acoes .link { gap: var(--space-2); }
+
+/* Celular estreito: menos padding lateral em TODOS os botões. Fica no fim para vencer as regras base. */
+@media (max-width: 399px) {
+  .botao, .whatsapp-fixo { padding-inline: var(--space-4); }
+}
