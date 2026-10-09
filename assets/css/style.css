@@ -154,17 +154,17 @@ p { text-wrap: pretty; }
   .heroi__midia { aspect-ratio: auto; width: 100%; height: 640px; }
   .sobre__retrato, .publico__cards { max-width: 560px; margin-inline: auto; }
 }
-/* Celular e tablet: a folha vira fundo do herói, sem quadro separado. Texto no alto, folha aparecendo embaixo. */
+/* Celular e tablet: a folha vira fundo do herói, sem quadro separado. Texto no alto, faixa da folha embaixo do botão. */
 @media (max-width: 899px) {
-  .heroi { position: relative; isolation: isolate; min-height: calc(100svh - 72px); align-content: start; }
+  .heroi { position: relative; isolation: isolate; }
   .heroi__midia { position: absolute; inset: 0; z-index: -1; aspect-ratio: auto; width: auto; height: auto; }
   .heroi__midia picture { display: block; height: 100%; }
   .heroi__midia img { object-position: 15% 100%; }
   .heroi__midia::after {
     content: ""; position: absolute; inset: 0;
-    background: linear-gradient(to bottom, var(--surface-1) 0%, rgba(252, 251, 245, 0.94) 50%, rgba(252, 251, 245, 0) 85%);
+    background: linear-gradient(to bottom, var(--surface-1) 0%, rgba(252, 251, 245, 0.94) calc(100% - 210px), rgba(252, 251, 245, 0) calc(100% - 16px));
   }
-  .heroi__texto { padding-bottom: var(--space-9); }
+  .heroi__texto { padding-bottom: calc(var(--space-9) + var(--space-6)); } /* faixa da folha embaixo do botão */
 }
 @media (min-width: 900px) {
   .heroi { grid-template-columns: 1fr 1fr; align-items: center; }
