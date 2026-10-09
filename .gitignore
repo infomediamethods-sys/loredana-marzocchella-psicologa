@@ -13,3 +13,7 @@ LIBERADO-PARA-INDEXAR
 .githooks/
 .claude/
 .DS_Store
+
+# Marcador de aprovação do Armin (lido pelo publicador automático do Mac)
+APROVADO*
+CLAUDE.md
