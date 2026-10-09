@@ -100,6 +100,14 @@ p { text-wrap: pretty; }
 @media (max-width: 399px) {
   .cabecalho__marca { white-space: normal; min-width: 0; }
 }
+/* Celular e tablet: sem menu de três tracinhos; botão de WhatsApp no cabeçalho (regra do Armin, 06/10/2026) */
+.cabecalho__cta-extra { display: none; }
+@media (max-width: 899px) {
+  .cabecalho__menu { display: none; }
+  .cabecalho__marca { white-space: normal; min-width: 0; }
+  .cabecalho__cta { display: inline-flex; flex-shrink: 0; padding-inline: var(--space-4); }
+}
+@media (min-width: 900px) { .cabecalho__cta-extra { display: inline; } }
 @media (min-width: 900px) {
   .cabecalho__barra { display: grid; grid-template-columns: 1fr auto 1fr; }
   .cabecalho__menu { order: 0; justify-self: start; }
