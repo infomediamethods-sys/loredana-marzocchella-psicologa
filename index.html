@@ -22,10 +22,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" media="(max-width: 899px)" imagesrcset="assets/img/heroi-mobile-480.webp 480w, assets/img/heroi-mobile-960.webp 960w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="preload" as="image" href="assets/img/heroi-mobile.webp" media="(max-width: 899px)">
-<link rel="preload" as="image" href="assets/img/heroi-desktop.webp" media="(min-width: 900px)">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,11 +115,10 @@
     </div>
     <div class="heroi__midia midia proporcao-heroi">
       <picture>
-        <source media="(min-width: 900px)" srcset="assets/img/heroi-desktop.webp" type="image/webp" width="2400" height="1600">
-        <source media="(min-width: 900px)" srcset="assets/img/heroi-desktop.jpg" width="2400" height="1600">
-        <source srcset="assets/img/heroi-mobile.webp" type="image/webp" width="1600" height="2000">
-        <img src="assets/img/heroi-mobile.jpg" width="1600" height="2000" alt="Folha de palmeira contra uma parede creme, em luz suave" fetchpriority="high">
-      </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/heroi-mobile-480.webp 480w, assets/img/heroi-mobile-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/heroi-mobile-960.webp 960w, assets/img/heroi-mobile-1600.webp 1600w" sizes="100vw">
+  <img src="assets/img/heroi-mobile-960.jpg" width="1600" height="2000" alt="Folha de palmeira contra uma parede creme, em luz suave" decoding="async" fetchpriority="high">
+</picture>
     </div>
   </section>
 
@@ -135,9 +133,10 @@
     <div class="container sobre__grade">
       <div class="sobre__retrato midia proporcao-retrato revelar">
         <picture>
-          <source srcset="assets/img/sobre-loredana.webp" type="image/webp">
-          <img src="assets/img/sobre-loredana.jpg" width="1200" height="1500" alt="Loredana Marzocchella sorrindo, sentada no tapete do consultório com fantoches de dedo, lápis de cor e brinquedos" loading="lazy">
-        </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/sobre-loredana-480.webp 480w, assets/img/sobre-loredana-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/sobre-loredana-960.webp 960w" sizes="50vw">
+  <img src="assets/img/sobre-loredana-960.jpg" width="1200" height="1500" alt="Loredana Marzocchella sorrindo, sentada no tapete do consultório com fantoches de dedo, lápis de cor e brinquedos" decoding="async">
+</picture>
       </div>
       <div class="sobre__card revelar">
         <p class="rotulo">Sobre mim</p>
@@ -181,9 +180,10 @@
       </div>
       <div class="trabalho__midia midia revelar">
         <picture>
-          <source srcset="assets/img/esperar.webp" type="image/webp">
-          <img src="assets/img/esperar.jpg" width="1200" height="1500" alt="Folhas secas de palmeira em um vaso de cerâmica crua" loading="lazy">
-        </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/esperar-480.webp 480w, assets/img/esperar-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/esperar-960.webp 960w" sizes="50vw">
+  <img src="assets/img/esperar-960.jpg" width="1200" height="1500" alt="Folhas secas de palmeira em um vaso de cerâmica crua" decoding="async">
+</picture>
       </div>
     </div>
   </section>
@@ -198,9 +198,10 @@
         <li class="card revelar">
           <div class="card__midia midia proporcao-card">
             <picture>
-              <source srcset="assets/img/publico-criancas.webp" type="image/webp">
-              <img src="assets/img/publico-criancas.jpg" width="1200" height="900" alt="Lápis de cor em tons pastel" loading="lazy">
-            </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/publico-criancas-480.webp 480w, assets/img/publico-criancas-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/publico-criancas-960.webp 960w" sizes="50vw">
+  <img src="assets/img/publico-criancas-960.jpg" width="1200" height="900" alt="Lápis de cor em tons pastel" decoding="async" loading="lazy">
+</picture>
           </div>
           <div class="card__corpo">
             <p class="rotulo">Infância</p>
@@ -211,9 +212,10 @@
         <li class="card revelar">
           <div class="card__midia midia proporcao-card">
             <picture>
-              <source srcset="assets/img/publico-adolescentes.webp" type="image/webp">
-              <img src="assets/img/publico-adolescentes.jpg" width="1200" height="900" alt="Caderno espiral, folhas verdes e pontas de lápis sobre fundo claro" loading="lazy">
-            </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/publico-adolescentes-480.webp 480w, assets/img/publico-adolescentes-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/publico-adolescentes-960.webp 960w" sizes="50vw">
+  <img src="assets/img/publico-adolescentes-960.jpg" width="1200" height="900" alt="Caderno espiral, folhas verdes e pontas de lápis sobre fundo claro" decoding="async" loading="lazy">
+</picture>
           </div>
           <div class="card__corpo">
             <p class="rotulo">Adolescência</p>
@@ -224,9 +226,10 @@
         <li class="card revelar">
           <div class="card__midia midia proporcao-card">
             <picture>
-              <source srcset="assets/img/publico-adultos.webp" type="image/webp">
-              <img src="assets/img/publico-adultos.jpg" width="1200" height="900" alt="Xícara de café, óculos, livro e uma planta em vaso" loading="lazy">
-            </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/publico-adultos-480.webp 480w, assets/img/publico-adultos-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/publico-adultos-960.webp 960w" sizes="50vw">
+  <img src="assets/img/publico-adultos-960.jpg" width="1200" height="900" alt="Xícara de café, óculos, livro e uma planta em vaso" decoding="async" loading="lazy">
+</picture>
           </div>
           <div class="card__corpo">
             <p class="rotulo">Vida adulta</p>
@@ -247,9 +250,10 @@
     <div class="container duvidas__grade">
       <div class="duvidas__midia midia revelar">
         <picture>
-          <source srcset="assets/img/duvidas.webp" type="image/webp">
-          <img src="assets/img/duvidas.jpg" width="1200" height="1500" alt="Ramo de aspargo-samambaia sobre fundo claro" loading="lazy">
-        </picture>
+  <source type="image/webp" media="(max-width: 899px)" srcset="assets/img/duvidas-480.webp 480w, assets/img/duvidas-960.webp 960w" sizes="100vw">
+  <source type="image/webp" srcset="assets/img/duvidas-960.webp 960w" sizes="50vw">
+  <img src="assets/img/duvidas-960.jpg" width="1200" height="1500" alt="Ramo de aspargo-samambaia sobre fundo claro" decoding="async" loading="lazy">
+</picture>
       </div>
       <div class="duvidas__card revelar">
         <p class="rotulo">Dúvidas</p>
